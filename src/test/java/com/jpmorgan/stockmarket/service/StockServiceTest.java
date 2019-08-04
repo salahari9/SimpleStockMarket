@@ -1,4 +1,4 @@
-package com.jpmorgan.stockmarket.stockmarket.service;
+package com.jpmorgan.stockmarket.service;
 
 import static org.junit.Assert.assertEquals;
 
