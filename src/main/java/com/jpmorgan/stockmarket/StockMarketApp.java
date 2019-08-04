@@ -14,14 +14,16 @@ public class StockMarketApp {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
-
+		// Initiazing all the Dummy Data
 		initializeDummyData();
+		//Display Main Menu
 		displayMainMenuOptions();
-
+		//Taking Inputs from the user
 		scanner = new Scanner(System.in);
 		String choice = null;
 		while (true) {
 			choice = scanner.nextLine();
+			//Quis if user selected "q"
 			if ("q".equals(choice)) {
 				scanner.close();
 				System.exit(0);
@@ -32,6 +34,7 @@ public class StockMarketApp {
 					switch (option) {
 					case 1:
 						stock = getStock();
+						//Displaying Submenu 
 						invokeSubMenu(stock);
 					case 2:
 						double gbce = StockUtil.calculateGBCE();
@@ -57,6 +60,7 @@ public class StockMarketApp {
 	}
 
 	/**
+	 * This method displays the sub menu options
 	 * @param stock
 	 */
 	private static void invokeSubMenu(Stock stock) {
@@ -67,10 +71,12 @@ public class StockMarketApp {
 		while (true) {
 			
 			choice = scanner.nextLine();
+			//Quits user select "q"
 			if ("q".equals(choice)) {
 				scanner.close();
 				System.exit(0);
 			}else if ("0".equals(choice)) {
+				//Goes to Preious menu 
 				break;
 			} else {
 				try {
@@ -116,6 +122,9 @@ public class StockMarketApp {
 		}
 	}
 
+	/**
+	 * This method Initialize the Dummy Data
+	 */
 	private static void initializeDummyData() {
 		
 		StockService stockService = StockService.getInstance();
@@ -128,6 +137,9 @@ public class StockMarketApp {
 
 	}
 
+	/**
+	 * Thsi metod read the stock symbol and returns the corresponding stock
+	 */
 	private static Stock getStock() throws StockMarketException {
 		System.out.println("Please enter stock symbol");
 		String stockSymbol = scanner.nextLine();
@@ -138,6 +150,10 @@ public class StockMarketApp {
 		return stock;
 	}
 
+	
+	/**
+	 * This methos reads the Stock Price, if it's not valid throws exception
+	 */
 	private static double getStockPrice() throws StockMarketException {
 		System.out.println("Please enter stock price");
 		String stockPrice = scanner.nextLine();
@@ -152,6 +168,10 @@ public class StockMarketApp {
 		}
 	}
 
+	
+	/**
+	 * This method returns the trade types, if it's not valid throws exception
+	 */
 	private static TradeType getTradeType() throws StockMarketException {
 		System.out.println("Please enter trade type (BUY/SELL)");
 		String type = scanner.nextLine();
@@ -162,6 +182,9 @@ public class StockMarketApp {
 		}
 	}
 
+	/**
+	 * This method reads the Stock quantity, if it's not valid throws exception
+	 */
 	private static int getQuantity() throws StockMarketException {
 		System.out.println("Please input quantity");
 		String quantity = scanner.nextLine();
@@ -176,6 +199,9 @@ public class StockMarketApp {
 		}
 	}
 
+	/**
+	 * This method displays the main method option
+	 */
 	private static void displayMainMenuOptions() {
 		System.out.println("JPMorgan - Super simple stock market");
 		System.out.println("1: Please enter stock symbol");
@@ -183,6 +209,9 @@ public class StockMarketApp {
 		System.out.println("q: Quit");
 	}
 
+	/**
+	 * This method displays the sub menu options
+	 */
 	private static void displaySubMenuOptions() {
 		System.out.println("JPMorgan - Super simple stock market");
 		System.out.println("1: Calculate dividend yield for stock");

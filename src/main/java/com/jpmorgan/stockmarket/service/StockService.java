@@ -38,7 +38,7 @@ public class StockService {
 	}
 	
 	/**
-	 * 
+	 * This method calculate the Div Yield based on the price
 	 * @param stock
 	 * @param price
 	 * @return
@@ -58,7 +58,7 @@ public class StockService {
 	}
 
 	/**
-	 * 
+	 * This method calculate the PE Ratio based on the price
 	 * @param stock
 	 * @param price
 	 * @return
@@ -73,7 +73,7 @@ public class StockService {
 	}
 	
 	/**
-	 * 
+	 * This method calculate the volume Weighed Stock Price for all  trades 
 	 * @param trades
 	 * @return
 	 */
@@ -87,7 +87,7 @@ public class StockService {
 	}
 
 	/**
-	 * 
+	 * This method calculate the GBCE for all Trades
 	 * @param trades
 	 * @return
 	 */

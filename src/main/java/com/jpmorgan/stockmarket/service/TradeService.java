@@ -27,7 +27,7 @@ public class TradeService {
 		return tradeService;
 	}
 	/**
-	 * 
+	 * This method store the trade in temp memory
 	 * @param trade
 	 */
 	public void recordTrade(Trade trade) {
@@ -36,7 +36,7 @@ public class TradeService {
 	}
 
 	/**
-	 * 
+	 * This nethod gives all the trades based on the recorded time
 	 * @param stock
 	 * @param min
 	 * @return List of Trades
@@ -46,7 +46,7 @@ public class TradeService {
 	}
 	
 	/**
-	 * 
+	 * This method returns all the trades
 	 * @return all trades
 	 */
 	public List<Trade> getAllTrades(){
